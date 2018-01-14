@@ -415,8 +415,8 @@ class ParallelTempering:
 
 
 			for l in range( self.num_chains-1, 0, -1):            
-				u = 100000#random.uniform(0, 1) 
-				swap_prob = min(1, swap_proposal[l-1])
+				u = 1
+				swap_prob = swap_proposal[l-1]
 
 				#randomly choose to accep to reject swap based on swap proposal
 				if u < swap_prob : 
