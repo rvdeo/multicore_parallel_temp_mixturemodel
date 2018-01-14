@@ -484,7 +484,7 @@ class ParallelTempering:
 
 #plot a figure of posterior distributions in histogram
 def plot_figure(list_points,title,ylabel,xlabel):
-	bins = np.linspace(0, 1, 20)
+	bins = np.linspace(0, 1, 100)
 	plt.clf()
 	plt.hist(list_points, bins)
 	plt.savefig( title + '.png')
@@ -520,7 +520,7 @@ def main():
 	# Paramaters need to be finetuned for the problem being solved and the foward model being used
 	#-------------------------------------------------------------------------------------
 
-	NumSamples = 50000 # need to pick yourself
+	NumSamples = 500000 # need to pick yourself
 	
 	# Number of chains of MCMC required to be run 
 	# PT is a multicore implementation must num_chains >= 2
@@ -529,7 +529,7 @@ def main():
 
 	#parameters for Parallel Tempering
 	maxtemp = int(num_chains * 10)/2
-	swap_interval = int(0.001 * NumSamples) #time when swap will be proposed ()
+	swap_interval = int(0.1 * NumSamples) #time when swap will be proposed ()
 
 
 	# parameters for MCMC (need to be adjusted based on problem)
