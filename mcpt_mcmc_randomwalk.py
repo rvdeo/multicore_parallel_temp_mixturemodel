@@ -525,7 +525,7 @@ def main():
 	# Number of chains of MCMC required to be run 
 	# PT is a multicore implementation must num_chains >= 2
 	# Choose a value less than the numbe of core available (avoid context swtiching)
-	num_chains = 10
+	num_chains = 6
 
 	#parameters for Parallel Tempering
 	maxtemp = int(num_chains * 10)/2
